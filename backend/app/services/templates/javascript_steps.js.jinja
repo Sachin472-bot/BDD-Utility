@@ -1,0 +1,11 @@
+{% if framework == "cucumber" %}
+const { Given, When, Then } = require('@cucumber/cucumber');
+const { expect } = require('chai');
+
+{% for pattern, func_name in steps.items() %}
+{{ pattern.split()[0] }}('{{ pattern }}', {% if '(' in pattern %}async (...args) =>{% else %}async () =>{% endif %} {
+  // Implementation for: {{ pattern }}
+  throw new Error('Step not implemented');
+});
+{% endfor %}
+{% endif %}

@@ -1,0 +1,13 @@
+{% if framework == "behave" %}
+from behave import given, when, then
+from hamcrest import assert_that, equal_to
+
+{% for pattern, func_name in steps.items() %}
+@{{ pattern.split()[0].lower() }}('{{ pattern }}')
+def {{ func_name }}(context{% if '(' in pattern %}, *args{% endif %}):
+    """
+    Implementation for: {{ pattern }}
+    """
+    raise NotImplementedError("Step not implemented")
+{% endfor %}
+{% endif %}
