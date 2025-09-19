@@ -1,0 +1,90 @@
+ Comprehensive Manual Test Case Generation & Formatting – Fabindia.com
+This document outlines the structured approach and detailed formatting required for generating
+manual test cases for all functional and non-functional modules of Fabindia.com, an e-commerce
+platform. It ensures full test coverage and standardized documentation across the QA process.
+ Test Case Documentation Format
+• Test Case ID – Unique identifier prefixed with the module name
+• Title – Brief description of what is being tested
+• Module – Functional area of the application under test
+• Preconditions – Any setup or system state required before executing the test
+• Test Steps – Sequential actions needed to perform the test
+• Test Data – Specific inputs, values, or conditions required
+• Expected Result – The correct system behavior or output after executing steps
+• Actual Result – Observed behavior during execution
+• Status – Pass / Fail / Blocked / Not Executed
+• Priority – Business impact of the test (Low / Medium / High)
+• Notes / Comments – Any additional info, assumptions, or observations
+n Test Case Authoring Best Practices
+• Use clear and consistent language to describe steps and expectations
+• Keep test cases atomic (one objective per test)
+• Ensure test cases are repeatable and independent
+• Write from the perspective of real user behavior
+• Include both positive and negative scenarios
+• Use consistent identifiers and logical grouping by feature/module
+• Keep test data realistic and varied
+• Include validation criteria in expected results
+n Homepage & Global Navigation
+• Load performance and element visibility
+• Top and bottom navigation functionality
+• Banner and promotion redirections
+• Footer links and accessibility compliance
+n Product Listing & Filters
+• Category and sub-category navigation
+• Sorting and filtering logic
+• Pagination or infinite scroll behavior
+• Product consistency with filter conditions
+n Product Detail Page
+• Product information visibility
+• Variant (size, color) selection and availability
+• Image gallery interaction
+• Add to Cart and Add to Wishlist functionalities
+n Cart Management
+• Cart updates for quantity changes
+• Item removal and price recalculations
+• Cart persistence across sessions
+• Coupon and promo code handling
+n Checkout Workflow
+• Guest and registered user flows
+• Address entry and validation
+• Shipping method and cost display
+• Order summary and payment gateway redirection
+n User Account & Profile
+• Signup, login, logout, and session handling
+• Password reset and field validations
+• Profile updates and address book
+• Order history and tracking access
+n Search Functionality
+• Keyword search with relevant results
+• Auto-suggestions and recent searches
+• Handling empty or invalid searches
+• Filter and sort behavior in search results
+n Payments & Transactions
+• Payment options (cards, UPI, COD, wallets)
+• Payment success, failure, and timeout handling
+• Order confirmation display and communication
+• Invoice generation and download functionality
+n Mobile Responsiveness & Cross-Platform Compatibility
+• Layout and interaction testing on mobile/tablet
+• Menu and filter usability on small screens
+• Browser compatibility for key flows
+• Touch gesture behavior and viewport scaling
+n Security & Access Control
+• Authentication validation
+• Access restrictions for unauthenticated users
+• Password masking and encryption validation
+• Input sanitization and field-level validation
+nn Edge Case & Error Handling
+• Missing or invalid input feedback
+• Server and client-side error displays
+• Session expiry and cart recovery
+• Retry mechanisms on failed processes
+n Notifications & Communication
+• Email and SMS triggers for all key events
+• Contact form submission validation
+• Newsletter subscription and unsubscription flow
+• Communication content correctness
+n General Usability & Accessibility
+• UI consistency across screens
+• Tooltip, label, and placeholder verification
+• ARIA compliance and keyboard navigation
+• Color contrast and text readability
