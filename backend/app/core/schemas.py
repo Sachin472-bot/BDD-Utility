@@ -1,4 +1,4 @@
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from pydantic import BaseModel
 
 class DocumentBase(BaseModel):
@@ -9,6 +9,14 @@ class DocumentBase(BaseModel):
 class FeatureFileResponse(BaseModel):
     feature_content: str
     suggested_steps: Dict[str, Any]
+    document_type: str
+    file_format: str
+
+class DocumentAnalysisResponse(BaseModel):
+    filename: str
+    suggested_type: Optional[str]
+    confidence_scores: Dict[str, float]
+    file_format: Optional[str]
 
 class StepDefinitionRequest(BaseModel):
     feature_content: str

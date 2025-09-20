@@ -15,16 +15,19 @@ class GherkinGenerator:
   {% endfor %}
 """)
 
-    def generate_feature(self, parsed_data: Dict[str, Any], doc_type: str) -> str:
+    def generate_feature(self, parsed_data: Dict[str, Any], feature_name: str, doc_type: str) -> str:
         """Generate Gherkin feature file content from parsed document data."""
-        if doc_type == "User Story":
-            return self._generate_from_user_story(parsed_data)
-        elif doc_type in ["BRD", "FRD"]:
-            return self._generate_from_requirements(parsed_data)
-        elif doc_type == "Test Case":
-            return self._generate_from_test_case(parsed_data)
-        else:
-            raise ValueError(f"Unsupported document type: {doc_type}")
+        try:
+            if doc_type == "User Story":
+                return self._generate_from_user_story(parsed_data, feature_name)
+            elif doc_type in ["BRD", "FRD"]:
+                return self._generate_from_requirements(parsed_data, feature_name)
+            elif doc_type == "Test Case":
+                return self._generate_from_test_case(parsed_data, feature_name)
+            else:
+                raise ValueError(f"Unsupported document type: {doc_type}")
+        except Exception as e:
+            raise ValueError(f"Error generating feature file: {str(e)}")
 
     def _generate_from_user_story(self, parsed_data: Dict[str, Any]) -> str:
         scenarios = []

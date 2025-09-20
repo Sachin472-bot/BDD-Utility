@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
-from .api import router as api_router
+from .api import api_router
 
 app = FastAPI(title="BDD Utility API", version="1.0.0")
 
@@ -21,7 +21,7 @@ static_path.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(static_path)), name="static")
 
 # Include API router
-app.include_router(api_router, prefix="/api")
+app.include_router(api_router)
 
 @app.get("/")
 async def root():
